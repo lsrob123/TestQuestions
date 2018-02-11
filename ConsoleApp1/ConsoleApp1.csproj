@@ -44,8 +44,15 @@
   <ItemGroup>
     <Compile Include="AnswerRunner.cs" />
     <Compile Include="Codes\BinarySearchTree.cs" />
+    <Compile Include="Codes\InheritedUserInput.cs" />
     <Compile Include="Codes\Palindrome.cs" />
     <Compile Include="Codes\Path.cs" />
+    <Compile Include="Codes\Q1.cs" />
+    <Compile Include="Codes\Q2.cs" />
+    <Compile Include="Codes\SortedSearch.cs" />
+    <Compile Include="Codes\TrainComposition.cs" />
+    <Compile Include="Codes\TwoSum.cs" />
+    <Compile Include="Codes\XmlProcess.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

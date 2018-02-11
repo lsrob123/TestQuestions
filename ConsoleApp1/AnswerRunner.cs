@@ -8,7 +8,14 @@ namespace ConsoleApp1
         {
             //Palindrome.Run();
             //Path.Run();
-            BinarySearchTree.Run();
+            //BinarySearchTree.Run();
+            //InheritedUserInput.Run();
+            //TrainComposition.Run();
+            //XmlProcess.Run();
+            //TwoSum.Run();
+            
+            // Unresolved problem
+            SortedSearch.Run(); // Needs redo
         }
     }
 }
