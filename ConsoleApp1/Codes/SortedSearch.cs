@@ -8,10 +8,8 @@ namespace ConsoleApp1.Codes
     ///     For example, SortedSearch.CountNumbers(new int[] { 1, 3, 5, 7 }, 4) should return 2
     ///     because there are two array elements less than 4.
     /// </summary>
-    public class SortedSearch
-    {
-        public static int CountNumbers(int[] sortedArray, int lessThan)
-        {
+    public class SortedSearch {
+        public static int CountNumbers(int[] sortedArray, int lessThan) {
             if (sortedArray == null || sortedArray.Length == 0)
                 return 0;
 
@@ -32,8 +30,7 @@ namespace ConsoleApp1.Codes
             //        return 2;
             //}
 
-            while (lowerBound <= upperBound)
-            {
+            while (lowerBound <= upperBound) {
                 var mid = (upperBound + lowerBound) / 2;
                 var midValue = sortedArray[mid];
 
@@ -49,21 +46,37 @@ namespace ConsoleApp1.Codes
             return 0;
         }
 
-        public static void Run()
-        {
-            Console.WriteLine(CountNumbers(null, 4));
-            Console.WriteLine(CountNumbers(new int[0], 4));
-            Console.WriteLine(CountNumbers(new[] { 3 }, 4));
-            Console.WriteLine(CountNumbers(new[] { 4 }, 4));
-            Console.WriteLine(CountNumbers(new[] { 5 }, 4));
-            Console.WriteLine(CountNumbers(new[] { 1, 3, 5, 7 }, 4));
-            Console.WriteLine(CountNumbers(new[] { 1, 3, 4, 5, 7 }, 4));
-            Console.WriteLine(CountNumbers(new[] { 1, 5 }, 4));
-            Console.WriteLine(CountNumbers(new[] { 1, 2, 3 }, 4));
-            Console.WriteLine(CountNumbers(new[] { 4, 5 }, 4));
-            Console.WriteLine(CountNumbers(new[] { 1, 3, 4 }, 4));
-            Console.WriteLine(CountNumbers(new[] { 4, 5, 7, 8 }, 4));
-            Console.WriteLine(CountNumbers(new[] { 5, 7, 8 }, 4));
+        public static int CountNumbers2(int[] sortedArray, int lessThan) {
+            var list = sortedArray.ToList();
+            var a = list.BinarySearch(lessThan);
+
+            if (a < 0)
+                a = ~a;
+
+            return a;
+        }
+
+        public static void Run() {
+            var funcs = new List<Func<int[], int, int>> {CountNumbers, CountNumbers2};
+
+            foreach (var func in funcs) {
+                //Console.WriteLine(CountNumbers(null, 4));
+                Console.WriteLine(func(new int[0], 4));
+                Console.WriteLine(func(new[] {3}, 4));
+                Console.WriteLine(func(new[] {4}, 4));
+                Console.WriteLine(func(new[] {5}, 4));
+                Console.WriteLine(func(new[] {1, 3, 5, 7}, 4));
+                Console.WriteLine(func(new[] {1, 3, 4, 5, 7}, 4));
+                Console.WriteLine(func(new[] {1, 5}, 4));
+                Console.WriteLine(func(new[] {1, 2, 3}, 4));
+                Console.WriteLine(func(new[] {4, 5}, 4));
+                Console.WriteLine(func(new[] {1, 3, 4}, 4));
+                Console.WriteLine(func(new[] {4, 5, 7, 8}, 4));
+                Console.WriteLine(func(new[] {5, 7, 8}, 4));
+
+                Console.WriteLine();
+                Console.WriteLine();
+            }
         }
     }
 }
