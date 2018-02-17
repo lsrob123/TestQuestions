@@ -15,7 +15,11 @@ namespace ConsoleApp1
             //TwoSum.Run();
             
             // Unresolved problem
-            SortedSearch.Run(); // Needs redo
+            //SortedSearch.Run(); // Needs redo
+
+            //Prefix.Run();
+            //Branches.Run();
+            Q3.RunAsync().Wait();
         }
     }
 }

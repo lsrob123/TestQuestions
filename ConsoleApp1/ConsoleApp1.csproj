@@ -49,6 +49,7 @@
     <Compile Include="Codes\Path.cs" />
     <Compile Include="Codes\Q1.cs" />
     <Compile Include="Codes\Q2.cs" />
+    <Compile Include="Codes\Q3.cs" />
     <Compile Include="Codes\SortedSearch.cs" />
     <Compile Include="Codes\TrainComposition.cs" />
     <Compile Include="Codes\TwoSum.cs" />
@@ -58,6 +59,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Codes\HTMLPage1.html" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
